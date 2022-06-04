@@ -1,0 +1,77 @@
+.CallLogContainer {
+  position: relative;
+}
+
+.CallsBox {
+  min-height: 10rem;
+  position: relative;
+  background-color: var(--color-gray-600);
+  width: 70%;
+  min-width: 40rem;
+  max-width: 60rem;
+  margin: 3rem auto;
+  box-shadow: 0 1rem 3rem rgba($color: #000000, $alpha: 0.2);
+  padding: 1rem 1.6rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  color: #f9fafb;
+}
+
+.HeaderTertiary {
+  font-size: 2.4rem;
+  margin-bottom: 1.4rem;
+  font-weight: 500;
+}
+
+.CallList {
+  list-style: none;
+  margin: -1rem -1.5rem;
+  max-height: calc(100vh - 20rem);
+  overflow-y: auto;
+}
+
+.GroupHeader {
+  padding: 1rem 1.4rem;
+}
+
+.MoreCalls {
+  left: 50%;
+  bottom: -2.6rem;
+  transform: translateX(-50%);
+  background-color: var(--color-gray-600);
+  padding: 1rem 1.6rem;
+  border-radius: 4rem;
+  border: transparent;
+  color: #fff;
+  position: absolute;
+  cursor: pointer;
+  outline: 2px solid var(--color-gray-700);
+  animation: none;
+  transition: background-color 0.3s;
+
+  &:hover {
+    animation: spring 0.9s ease-in infinite;
+    background-color: var(--color-gray-800);
+  }
+}
+
+.NoCalls,
+.Error {
+  padding: 1rem 1.6rem;
+}
+
+.Error {
+  color: red;
+}
+
+@keyframes spring {
+  0% {
+    bottom: -2.6rem;
+  }
+  50% {
+    bottom: -2.8rem;
+  }
+  100% {
+    bottom: -2.6rem;
+  }
+}
