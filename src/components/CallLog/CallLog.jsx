@@ -104,7 +104,7 @@ const Calls = () => {
         setIsLoading(false);
       }
     );
-  }, [calls]);
+  }, [calls, dates]);
 
   // Fetch initial Calls
   useEffectOnce(() => {
