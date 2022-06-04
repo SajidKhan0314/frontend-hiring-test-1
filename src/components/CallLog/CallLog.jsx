@@ -93,7 +93,7 @@ const Calls = () => {
     setError(null);
     setHasNextPage(false);
     CallServices.loadMoreCalls(
-      { length: calls.length },
+      { length: calls.length, oldDates: dates },
       (data) => {
         setDates(data.dates);
         setCalls([...calls, ...data.calls]);

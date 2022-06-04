@@ -36,16 +36,16 @@ const CallServices = {
         final();
       });
   },
-  loadMoreCalls: ({ length }, success, error, final) => {
+  loadMoreCalls: ({ length, oldDates }, success, error, final) => {
     axios
       .get(`/calls?offset=${length}&limit=10`)
       .then((res) => {
         let dates = res.data.nodes.map((el) =>
           new Date(el.created_at).toLocaleDateString()
         );
-        let dateSet = new Set(dates);
+        let dateSet = new Set([...dates, ...oldDates]);
         let uniqueDates = Array.from(dateSet);
-        let sortedDates = sortDates([...uniqueDates, ...dates]);
+        let sortedDates = sortDates(uniqueDates);
         success({
           dates: sortedDates,
           calls: res.data.nodes,
